@@ -1,37 +1,49 @@
 # IS Element Finder
 
-A Streamlit web application for screening DNA sequences for candidate bacterial insertion sequence (IS) elements.
+## About the Project
+
+IS Element Finder is a Python-based web application designed to identify potential bacterial Insertion Sequence (IS) elements from DNA sequences.
+
+The application analyses DNA sequences by looking for Terminal Inverted Repeats (TIRs) and checking for possible Target Site Duplications (TSDs).
 
 ## Features
-- Paste a DNA sequence or upload a FASTA file.
-- Configure candidate length, TIR length, mismatch limit and TSD length.
-- View candidate coordinates, length, TIR sequences, mismatch count and TSD result.
-- Download results as CSV.
-- Supports multiple FASTA records.
 
-## Scientific limitation
-This is a heuristic candidate finder, not a validated IS annotation pipeline. TIR similarity and a possible TSD do not confirm an IS element. Synthetic test sequences are for controlled software testing only; validation on real bacterial datasets and curated IS references is future work.
+- Enter a DNA sequence directly into the application.
+- Upload DNA sequences in FASTA format.
+- Identify potential IS elements based on TIR similarity.
+- Configure sequence length and mismatch parameters.
+- View candidate positions and sequence details.
+- Check for possible target site duplications.
+- Download analysis results as a CSV file.
 
-## Run locally
-Install Python 3.10+, then run:
+## Technologies Used
 
-```bash
-pip install -r requirements.txt
-streamlit run app.py
-```
+- Python
+- Biopython
+- Streamlit
+- Pandas
 
-Open the local URL shown in the terminal (usually http://localhost:8501).
+## How to Use
 
-## Publish to GitHub
-1. Create a **public** GitHub repository named `is-element-finder`.
-2. Upload `app.py`, `algorithm.py`, `requirements.txt`, and `README.md` to the repository root.
-3. Commit the files.
+1. Open the IS Element Finder web application.
+2. Paste a DNA sequence or upload a FASTA file.
+3. Select the required analysis settings.
+4. Click the Analyse button.
+5. View the detected candidate regions and their details.
+6. Download the results if required.
 
-## Deploy a public live URL
-1. Sign in to Streamlit Community Cloud using your GitHub account.
-2. Select **Create app** / **Deploy an app**.
-3. Choose repository `is-element-finder`, branch `main`, and main file `app.py`.
-4. Deploy and wait for the build to complete.
-5. Copy the generated `https://....streamlit.app` URL and test it in an incognito/private browser window.
+## Project Structure
 
-The GitHub repository URL and live app URL are different. The live URL is only created after successful deployment.
+- `app.py` – Web application interface.
+- `algorithm.py` – DNA sequence analysis and IS candidate detection.
+- `requirements.txt` – Required Python libraries.
+- `synthetic_demo.fasta` – Sample sequence for testing.
+
+## Note
+
+This application identifies potential IS elements using a heuristic approach based on terminal inverted repeats and target site duplications. The detected candidates should not be considered experimentally confirmed IS elements. Further validation using real bacterial sequences and reference databases is required.
+
+## Project Team
+
+- Shraddha Padmaraju
+- Srihita Gutta
